@@ -31,7 +31,7 @@ resource "aws_autoscaling_group" "ec2_autoscaling_group" {
   depends_on = [aws_elasticache_replication_group.socialapp_redis_cluster]
 
   tag {
-    key = "Name"
+    key                 = "Name"
     # value               = "EC2-ASG-${terraform.workspace}"
     value               = "EC2_AL2023-ASG-${terraform.workspace}"
     propagate_at_launch = true

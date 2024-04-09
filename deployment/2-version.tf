@@ -10,5 +10,6 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+  max_retries = 1
   # you may provide access key here else it will access on the local machine
 }

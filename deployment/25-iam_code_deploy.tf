@@ -17,19 +17,19 @@ resource "aws_iam_role" "code_deploy_iam_role" {
 resource "aws_iam_policy" "autoscaling_policy" {
   name        = "AutoScalingPolicy"
   description = "IAM policy for Amazon Auto Scaling"
-  policy = jsonencode({
-    "Version" : "2012-10-17",
-    "Statement" : [
-      {
-        "Effect" : "Allow",
-        "Action" : [
-          "iam:PassRole",
-          "ec2:RunInstances"
-        ],
-        "Resource" : "*"
-      }
+  policy      = jsonencode({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:PassRole",
+                "ec2:RunInstances"
+            ],
+            "Resource": "*"
+        }
     ]
-  })
+})
 }
 
 resource "aws_iam_role_policy_attachment" "autoscaling_policy" {

@@ -109,7 +109,7 @@ variable "ec2_instance_type" {
   description = "EC2 Instance Type"
   type        = string
   # when use micro, it said out of memory before it's deployed
-  default = "t2.medium"
+  default     = "t2.medium"
 }
 
 variable "bastion_host_type" {

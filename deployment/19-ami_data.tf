@@ -4,7 +4,7 @@ data "aws_ami" "ec2_ami" {
   owners      = ["amazon"]
 
   filter {
-    name = "name"
+    name   = "name"
     # values = ["amzn2-ami-hvm-*-gp2"]
     values = ["al2023-ami-*-kernel-6.1-x86_64"]
   }

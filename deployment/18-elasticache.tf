@@ -9,8 +9,8 @@ resource "aws_elasticache_replication_group" "socialapp_redis_cluster" {
   node_type                     = var.elasticache_node_type
   replication_group_description = "Redis elasticache replication group"
   number_cache_clusters         = 2
-  engine                        = "redis"
-  engine_version                = "6.x"
+  engine = "redis"
+  engine_version = "6.x"
   parameter_group_name          = var.elasticache_parameter_group_name
   port                          = 6379
   multi_az_enabled              = true

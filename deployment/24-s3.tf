@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "code_deploy_backend_bucket" {
-  bucket        = "${local.prefix}-app"
+  bucket = "${local.prefix}-app"
   force_destroy = true
 
   tags = local.common_tags
@@ -13,7 +13,7 @@ resource "aws_s3_bucket_ownership_controls" "code_deploy_bucket_ownershil_ctrls"
 }
 
 resource "aws_s3_bucket_acl" "code_deploy_bucket_acl" {
-  depends_on = [aws_s3_bucket_ownership_controls.code_deploy_bucket_ownershil_ctrls]
+  depends_on = [ aws_s3_bucket_ownership_controls.code_deploy_bucket_ownershil_ctrls ]
 
   bucket = aws_s3_bucket.code_deploy_backend_bucket.id
   acl    = "private"

@@ -7,7 +7,7 @@ resource "aws_launch_template" "asg_launch_template" {
     name = aws_iam_instance_profile.ec2_instance_profile.name
   }
   network_interfaces {
-    security_groups             = [aws_security_group.autoscaling_group_sg.id]
+    security_groups = [aws_security_group.autoscaling_group_sg.id]
     associate_public_ip_address = false
   }
   user_data = filebase64("${path.module}/userdata/user-data.sh")
