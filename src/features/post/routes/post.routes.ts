@@ -11,8 +11,8 @@ class PostRoutes {
   }
 
   public routes(): Router {
-    this.router.get('/', GetPost.prototype.getPosts);
-    this.router.post('/', CreatePost.prototype.post);
+    this.router.get('/all-posts', GetPost.prototype.getPosts);
+    this.router.post('/create-post', CreatePost.prototype.post);
 
     return this.router;
   }
