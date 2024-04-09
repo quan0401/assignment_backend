@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/SocialApp/backend
+    destination: /home/ec2-user/assignment_backend
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh

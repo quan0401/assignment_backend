@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ec2-user/SocialApp/backend
+cd /home/ec2-user/assignment_backend
 sudo rm -rf env-file.zip
 sudo rm -rf .env
 sudo rm -rf .env.develop

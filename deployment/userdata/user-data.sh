@@ -44,9 +44,10 @@ fi
 
 cd /home/ec2-user
 
-# clone dev branch
-git clone -b develop https://github.com/quan0401/SocialApp.git
-cd SocialApp/backend
+
+# git clone -b develop https://github.com/quan0401/SocialApp.git
+git clone https://github.com/quan0401/assignment_backend
+cd assignment_backend
 sudo npm install
 aws s3 sync s3://socialapp-env-files/develop .
 sudo dnf install unzip -y   # For CentOS 7 or later
