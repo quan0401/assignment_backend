@@ -3,7 +3,6 @@ import { ICommentDocument, ICommentJob, ICommentNameList, IQueryComment } from '
 import { CommentsModel } from '~comment/model/comment.schema';
 import { IPostDocument } from '~post/interfaces/post.interface';
 import { PostModel } from '~post/models/post.schema';
-import { nofiticationTemplate } from '~services/emails/template/nofitications/nofitication-template';
 import { IUserDocument } from '~user/interfaces/user.interface';
 
 class CommentService {
