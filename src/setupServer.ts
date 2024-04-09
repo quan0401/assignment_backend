@@ -41,15 +41,16 @@ export class ChattyServer {
         name: 'session',
         keys: [config.SECRET_KEY_ONE, config.SECRET_KEY_TWO],
         maxAge: 3600 * 1000 * 24,
-        secure: false
-        // sameSite: 'none'
+        secure: false,
+        sameSite: 'none'
       })
     );
     app.use(hpp());
     app.use(helmet());
     app.use(
       cors({
-        origin: config.CLIENT_URI,
+        // origin: config.CLIENT_URI,
+        origin: '*',
         // credentials: true so that we can attach token to client
         credentials: true,
         optionsSuccessStatus: 200,
