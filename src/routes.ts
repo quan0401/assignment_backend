@@ -19,8 +19,8 @@ export default (app: Application) => {
     app.use(`${BASE_URL}/user`, userRoutes.routes());
 
     // verify routes
-    app.use(`${BASE_URL}/post1`, AuthMiddleware.prototype.verifyUser, postRoutes.routes());
-    app.use(`${BASE_URL}/comment1`, AuthMiddleware.prototype.verifyUser, commentRoute.routes());
+    app.use(`${BASE_URL}/post`, AuthMiddleware.prototype.verifyUser, postRoutes.routes());
+    app.use(`${BASE_URL}/comment`, AuthMiddleware.prototype.verifyUser, commentRoute.routes());
     // app.use(`${BASE_URL}/follow`,  followerRoutes.routes());
     // app.use(`${BASE_URL}/nofitication`,  nofiticationRoutes.routes());
     // app.use(`${BASE_URL}/image`, imageRoutes.routes());
