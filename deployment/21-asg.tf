@@ -43,3 +43,45 @@ resource "aws_autoscaling_group" "ec2_autoscaling_group" {
     propagate_at_launch = true
   }
 }
+
+# resource "aws_autoscaling_group" "frontend_autoscaling_group" {
+#   name                 = "${local.prefix}-Frontend-ASG"
+#   vpc_zone_identifier = [aws_subnet.private_subnet_a.id, aws_subnet.private_subnet_b.id]
+#   max_size            = 1
+#   min_size            = 1
+#   desired_capacity    = 1
+
+#   launch_template {
+#     id      = aws_launch_template.frontend_launch_template.id
+#     version = aws_launch_template.frontend_launch_template.latest_version
+#   }
+
+#   health_check_type         = "ELB"
+#   health_check_grace_period = 600
+#   default_cooldown          = 150
+#   force_delete              = true
+#   target_group_arns         = [aws_alb_target_group.server_frontend_tg.arn]
+#   enabled_metrics = [
+#     "GroupMinSize",
+#     "GroupMaxSize",
+#     "GroupDesiredCapacity",
+#     "GroupInServiceInstances",
+#     "GroupTotalInstances"
+#   ]
+
+#   lifecycle {
+#     create_before_destroy = true
+#   }
+
+#   tag {
+#     key                 = "Name"
+#     value               = "EC2_AL2023-Frontend-ASG-${terraform.workspace}"
+#     propagate_at_launch = true
+#   }
+
+#   tag {
+#     key                 = "Type"
+#     value               = "Frontend-${terraform.workspace}"
+#     propagate_at_launch = true
+#   }
+# }

@@ -61,3 +61,34 @@ resource "aws_lb_listener_rule" "alb_https_listener_rule" {
     }
   }
 }
+
+# resource "aws_lb_listener" "alb_http_listener_frontend" {
+#   load_balancer_arn = aws_lb.application_load_balancer.arn
+#   port              = "3000"
+#   protocol          = "HTTP"
+
+#   default_action {
+#     type             = "forward"
+#     target_group_arn = aws_alb_target_group.server_frontend_tg.arn
+#   }
+# }
+
+# resource "aws_lb_listener_rule" "alb_http_listener_rule_frontend" {
+#   listener_arn = aws_lb_listener.alb_http_listener_frontend.arn
+#   priority     = 100
+
+#   action {
+#     type = "redirect"
+#     redirect {
+#       port        = "443"
+#       protocol    = "HTTPS"
+#       status_code = "HTTP_301"
+#     }
+#   }
+
+#   condition {
+#     path_pattern {
+#       values = ["/*"]
+#     }
+#   }
+# }

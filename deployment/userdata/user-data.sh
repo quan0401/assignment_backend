@@ -55,3 +55,12 @@ sudo unzip env-file.zip
 sudo cp .env.develop .env
 sudo npm run build
 sudo npm start
+
+# Move back to the parent directory
+cd ..
+
+# Clone and run the frontend application
+git clone https://github.com/quan0401/assignment_frontend
+cd assignment_frontend
+sudo npm install
+sudo npm run dev
